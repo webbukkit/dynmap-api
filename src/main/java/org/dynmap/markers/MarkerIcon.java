@@ -12,7 +12,20 @@ public interface MarkerIcon {
     public static final String SIGN = "sign";
     /** Default world marker icon - always exists */
     public static final String WORLD = "world";
+
+    public enum MarkerSize {
+        MARKER_8x8("8x8"),
+        MARKER_16x16("16x16"),
+        MARKER_32x32("32x32");
         
+        String sz;
+        MarkerSize(String sz) {
+            this.sz = sz;
+        }
+        public String getSize() {
+            return sz;
+        }
+    }
     /**
      * Get ID of the marker icon (unique among marker icons)
      * @return ID
@@ -41,4 +54,8 @@ public interface MarkerIcon {
      * @return true
      */
     public boolean isBuiltIn();
+    /**
+     * Get marker size
+     */
+    public MarkerSize   getMarkerIconSize();
 }
