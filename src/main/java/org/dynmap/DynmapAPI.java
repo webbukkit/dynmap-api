@@ -1,6 +1,7 @@
 package org.dynmap;
 
 import org.bukkit.Location;
+import org.bukkit.entity.Player;
 import org.dynmap.markers.MarkerAPI;
 
 /**
@@ -57,5 +58,27 @@ public interface DynmapAPI {
      * Test if update renders are paused
      */
     public boolean getPauseUpdateRenders();
-
+    /**
+     * Set player visibility
+     * @param player - player
+     * @param is_visible - true if visible, false if hidden
+     */
+    public void setPlayerVisiblity(Player player, boolean is_visible);
+    /**
+     * Test if player is visible
+     * @return true if visible, false if not
+     */
+    public boolean getPlayerVisbility(Player player);
+    /**
+     * Post message from player to web
+     * @param player - player
+     * @param message - message text
+     */
+    public void postPlayerMessageToWeb(Player player, String message);
+    /**
+     * Post join/quit message for player to web
+     * @param player - player
+     * @param isjoin - if true, join message; if false, quit message
+     */
+    public void postPlayerJoinQuitToWeb(Player player, boolean isjoin);
 }
