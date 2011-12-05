@@ -39,4 +39,23 @@ public interface DynmapAPI {
      * @return number of tiles queued to be rerendered
      */
     public int triggerRenderOfVolume(Location l0, Location l1);
+    /*
+     * Pause full/radius render processing
+     * @param dopause - true to pause, false to unpause
+     */
+    public void setPauseFullRadiusRenders(boolean dopause);
+    /*
+     * Test if full renders are paused
+     */
+    public boolean getPauseFullRadiusRenders();
+    /*
+     * Pause update render processing
+     * @param dopause - true to pause, false to unpause
+     */
+    public void setPauseUpdateRenders(boolean dopause);
+    /*
+     * Test if update renders are paused
+     */
+    public boolean getPauseUpdateRenders();
+
 }
