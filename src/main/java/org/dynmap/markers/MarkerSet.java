@@ -152,4 +152,14 @@ public interface MarkerSet {
      * Get layer ordering priority (0=default, low before high in layer order)
      */
     public int getLayerPriority();
+    /**
+     * Get min zoom-in for display of layer (hide when zoom is below this setting)
+     * @return minzoom (0 if top - always displayed)
+     */
+    public int getMinZoom();
+    /**
+     * Set min zoom-in for display of layer
+     * @param minzoom - min zoom to display layer (0 = top, default)
+     */
+    public void setMinZoom(int maxzoom);
 }
