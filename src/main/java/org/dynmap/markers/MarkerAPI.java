@@ -1,6 +1,5 @@
 package org.dynmap.markers;
 
-import java.io.File;
 import java.io.InputStream;
 import java.util.Set;
 

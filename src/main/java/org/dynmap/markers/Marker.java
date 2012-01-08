@@ -1,7 +1,5 @@
 package org.dynmap.markers;
 
-import org.bukkit.Location;
-
 /**
  * This defines the public interface to a marker object, for use with the MarkerAPI
  */

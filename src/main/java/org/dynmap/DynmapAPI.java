@@ -2,35 +2,16 @@ package org.dynmap;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
-import org.dynmap.markers.MarkerAPI;
 
 /**
- * This is the interface representing the published API for the Dynmap plugin.  Public methods of the
+ * This is the interface representing the published API for the Dynmap plugin for Bukkit.  Public methods of the
  * DynmapPlugin class that are not defined in this interface are subject to change without notice, so
  * be careful with forming dependencies beyond these.  Plugins accessing dynmap 0.24 or later should
  * do so by casting the Plugin to this interface.
  * 
+ * This interface is Bukkit specific.
  */
-public interface DynmapAPI {
-    /**
-     * This method can return null if the 'markers' component has not been configured - 
-     * a warning message will be issued to the server.log in this event.
-     * 
-     * @return MarkerAPI, or null if not configured
-     */
-    public MarkerAPI getMarkerAPI();
-    /**
-     * Test if the marker API has been initialized yet
-     *
-     * @return true if it has been initialized
-     */
-    public boolean markerAPIInitialized();
-    /**
-     * Send generic message to all web users
-     * @param sender - label for sender of message ("Message from <plugin>:") - if null, no from notice
-     * @param msg - message to be sent
-     */
-    public boolean sendBroadcastToWeb(String sender, String msg);
+public interface DynmapAPI extends DynmapCommonAPI {
     /**
      * Trigger update on tiles associated with given locations.  If two locations provided,
      * the volume is the rectangular prism ("cuboid") with the two locations on opposite corners.
@@ -40,24 +21,6 @@ public interface DynmapAPI {
      * @return number of tiles queued to be rerendered
      */
     public int triggerRenderOfVolume(Location l0, Location l1);
-    /*
-     * Pause full/radius render processing
-     * @param dopause - true to pause, false to unpause
-     */
-    public void setPauseFullRadiusRenders(boolean dopause);
-    /*
-     * Test if full renders are paused
-     */
-    public boolean getPauseFullRadiusRenders();
-    /*
-     * Pause update render processing
-     * @param dopause - true to pause, false to unpause
-     */
-    public void setPauseUpdateRenders(boolean dopause);
-    /*
-     * Test if update renders are paused
-     */
-    public boolean getPauseUpdateRenders();
     /**
      * Set player visibility
      * @param player - player
@@ -81,4 +44,9 @@ public interface DynmapAPI {
      * @param isjoin - if true, join message; if false, quit message
      */
     public void postPlayerJoinQuitToWeb(Player player, boolean isjoin);
+    /**
+     * Get version of dynmap plugin
+     * @return version - format is "major.minor-build" or "major.minor.patch-build"
+     */
+    public String getDynmapVersion();
 }

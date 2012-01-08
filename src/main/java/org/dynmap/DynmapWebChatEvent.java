@@ -3,7 +3,9 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 
 /**
- * Custom bukkit event, corresponding to the receiving of a web-chat message from a web UI user
+ * Custom Bukkit event, corresponding to the receiving of a web-chat message from a web UI user
+ * 
+ * This interface is Bukkit specific.
  */
 public class DynmapWebChatEvent extends Event implements Cancellable {
     public static final String CUSTOM_TYPE = "org.dynmap.DynmapWebChatEvent";
