@@ -27,17 +27,31 @@ public interface DynmapCommonAPI {
      */
     public boolean sendBroadcastToWeb(String sender, String msg);
     /**
-     * Trigger update on tiles associated with given locations.  If two locations provided,
-     * the volume is the rectangular prism ("cuboid") with the two locations on opposite corners.
+     * Trigger update on tiles associated with given locations.  The volume is the rectangular prism ("cuboid") 
+     * with the two locations on opposite corners, (minx, miny, minz) and (maxx, maxy, maxz).
      * 
-     * @param loc - location of corner (minimum x, y, z of volume)
-     * @param sx - size of volume (extends from loc.x to loc.x+sx-1, inclusive)
-     * @param sy - size of volume (extends from loc.y to loc.y+sy-1, inclusive)
-     * @param sz - size of volume (extends from loc.z to loc.z+sz-1, inclusive)
+     * @param wid - world ID
+     * @param minx - minimum x of volume
+     * @param miny - minimum y of volume
+     * @param minz - minimum z of volume
+     * @param maxx - maximum x of volume
+     * @param maxy - maximum y of volume
+     * @param maxz - maximum z of volume
      * 
      * @return number of tiles queued to be rerendered
      */
-    public int triggerRenderOfVolume(DynmapLocation loc, int sx, int sy, int sz);
+    public int triggerRenderOfVolume(String wid, int minx, int miny, int minz, int maxx, int maxy, int maxz);
+    /**
+     * Trigger update on tiles associated with given block location.
+     *  
+     * @param wid - world ID
+     * @param x - x coordinate of block
+     * @param y - y coordinate of block
+     * @param z - z coordinate of block
+     * 
+     * @return number of tiles queued to be rerendered
+     */
+    public int triggerRenderOfBlock(String wid, int x, int y, int z);
     /*
      * Pause full/radius render processing
      * @param dopause - true to pause, false to unpause
