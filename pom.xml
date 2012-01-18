@@ -37,5 +37,12 @@
   		<version>[1.0.0-R1-SNAPSHOT,)</version>
   		<scope>compile</scope>
   	</dependency>
+  	<dependency>
+  		<groupId>org.dynmap</groupId>
+  		<artifactId>DynmapCoreAPI</artifactId>
+  		<version>${project.version}</version>
+  		<type>jar</type>
+  		<scope>compile</scope>
+  	</dependency>
   </dependencies>
 </project>
