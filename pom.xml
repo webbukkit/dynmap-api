@@ -5,6 +5,27 @@
   <version>0.30</version>
   <build>
   	<plugins>
+ 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<artifactSet>
+								<includes>
+									<include>org.dynmap:DynmapCoreAPI:jar:*</include>
+								</includes>
+							</artifactSet>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+  	
   		<plugin>
   			<artifactId>maven-assembly-plugin</artifactId>
 				<configuration>
@@ -40,7 +61,7 @@
   	<dependency>
   		<groupId>org.dynmap</groupId>
   		<artifactId>DynmapCoreAPI</artifactId>
-  		<version>${project.version}</version>
+  		<version>${version}</version>
   		<type>jar</type>
   		<scope>compile</scope>
   	</dependency>
