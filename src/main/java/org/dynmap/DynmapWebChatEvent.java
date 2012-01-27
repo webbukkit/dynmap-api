@@ -1,6 +1,7 @@
 package org.dynmap;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
+import org.bukkit.event.HandlerList;
 
 /**
  * Custom Bukkit event, corresponding to the receiving of a web-chat message from a web UI user
@@ -14,6 +15,7 @@ public class DynmapWebChatEvent extends Event implements Cancellable {
     private String message;
     private boolean cancelled;
     private boolean isprocessed;
+    private static final HandlerList handlers = new HandlerList();
     
     public DynmapWebChatEvent(String source, String name, String message) {
         super(CUSTOM_TYPE);
@@ -37,4 +39,8 @@ public class DynmapWebChatEvent extends Event implements Cancellable {
     public boolean isProcessed() { return isprocessed; }
     
     public void setProcessed() { isprocessed = true; }
+    
+    public HandlerList getHandlers() { return handlers; }
+    
+    public static HandlerList getHandlerList() { return handlers; }
 }
