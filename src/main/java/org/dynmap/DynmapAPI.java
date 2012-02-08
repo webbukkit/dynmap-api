@@ -2,6 +2,7 @@ package org.dynmap;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 
 /**
  * This is the interface representing the published API for the Dynmap plugin for Bukkit.  Public methods of the
@@ -49,4 +50,11 @@ public interface DynmapAPI extends DynmapCommonAPI {
      * @return version - format is "major.minor-build" or "major.minor.patch-build"
      */
     public String getDynmapVersion();
+    /**
+     * Set player visibility (transient - player is invisible if configured to be invisible OR any plugins assert they are invisible)
+     * @param player - player
+     * @param is_visible - true if visible, false if hidden
+     * @param plugin - asserting plugin
+     */
+    public void assertPlayerInvisibility(Player player, boolean is_invisible, Plugin plugin);
 }
