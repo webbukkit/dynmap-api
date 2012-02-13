@@ -51,10 +51,17 @@ public interface DynmapAPI extends DynmapCommonAPI {
      */
     public String getDynmapVersion();
     /**
-     * Set player visibility (transient - player is invisible if configured to be invisible OR any plugins assert they are invisible)
-     * @param player - player
-     * @param is_visible - true if visible, false if hidden
+     * Set player visibility (transient - if player is configured to be visible, they are hidden if one or more plugins assert their invisiblity)
+     * @param player - player ID
+     * @param is_invisible - true if asserting player should be invisible, false if no assertion
      * @param plugin - asserting plugin
      */
     public void assertPlayerInvisibility(Player player, boolean is_invisible, Plugin plugin);
+    /**
+     * Set player visibility (transient - if player is configured to be hidden, they are made visibile if one or more plugins assert their visibility))
+     * @param player - player
+     * @param is_visible - true if asserting that hidden player should be visible, false if no assertion
+     * @param plugin - asserting plugin
+     */
+    public void assertPlayerVisibility(Player player, boolean is_visible, Plugin plugin);
 }
