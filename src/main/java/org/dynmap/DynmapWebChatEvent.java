@@ -19,7 +19,6 @@ public class DynmapWebChatEvent extends Event implements Cancellable {
     private boolean isprocessed;
     
     public DynmapWebChatEvent(String source, String name, String message) {
-        super(CUSTOM_TYPE);
         this.source = source;
         this.name = name;
         this.message = message;
