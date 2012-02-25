@@ -55,7 +55,7 @@
   	<dependency>
   		<groupId>org.bukkit</groupId>
   		<artifactId>bukkit</artifactId>
-  		<version>(1.1-R3-SNAPSHOT,1.7)</version>
+  		<version>[1.1-R5-SNAPSHOT,1.7)</version>
   		<scope>compile</scope>
   	</dependency>
   	<dependency>
