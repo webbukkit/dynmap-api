@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.dynmap</groupId>
   <artifactId>dynmap-api</artifactId>
-  <version>0.37</version>
+  <version>0.36.1</version>
   <build>
   	<plugins>
  			<plugin>
