@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.dynmap</groupId>
   <artifactId>dynmap-api</artifactId>
-  <version>0.40</version>
+  <version>0.50</version>
   <build>
   	<plugins>
  			<plugin>
@@ -55,7 +55,7 @@
   	<dependency>
   		<groupId>org.bukkit</groupId>
   		<artifactId>bukkit</artifactId>
-  		<version>[1.2.5-R1.0,1.7)</version>
+  		<version>[1.2.5-R4.0,1.7)</version>
   		<scope>compile</scope>
   	</dependency>
   	<dependency>
