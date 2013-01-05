@@ -19,7 +19,7 @@ public interface DynmapAPI extends DynmapCommonAPI {
      * 
      * @param l0 - first location (required)
      * @param l1 - second location (if null, only single point invalidated (l0))
-     * @return number of tiles queued to be rerendered
+     * @return number of tiles queued to be rerendered  (@deprecated return value - just returns 1)
      */
     public int triggerRenderOfVolume(Location l0, Location l1);
     /**
