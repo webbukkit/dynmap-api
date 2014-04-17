@@ -1,9 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>us.dynmap</groupId>
-  <artifactId>dynmap-api</artifactId>
-  <build>
-  	<plugins>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>us.dynmap</groupId>
+	<artifactId>dynmap-api</artifactId>
+	<build>
+		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -13,7 +14,7 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
- 			<plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
 				<version>1.5</version>
@@ -33,9 +34,34 @@
 					</execution>
 				</executions>
 			</plugin>
-  	</plugins>
-  </build>
-  	<repositories>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+	<repositories>
 		<repository>
 			<releases>
 			</releases>
@@ -45,18 +71,18 @@
 			<url>http://repo.bukkit.org/content/repositories/releases/</url>
 		</repository>
 	</repositories>
-  
-  <dependencies>
-  	<dependency>
-  		<groupId>org.bukkit</groupId>
-  		<artifactId>bukkit</artifactId>
-  		<version>1.4.7-R1.0</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>us.dynmap</groupId>
-  		<artifactId>DynmapCoreAPI</artifactId>
-  		<version>${project.version}</version>
-  	</dependency>
-  </dependencies>
-  <version>1.9.4</version>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.bukkit</groupId>
+			<artifactId>bukkit</artifactId>
+			<version>1.4.7-R1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>us.dynmap</groupId>
+			<artifactId>DynmapCoreAPI</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+	<version>1.9.4</version>
 </project>
