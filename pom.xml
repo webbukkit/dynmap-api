@@ -27,7 +27,7 @@
 						<configuration>
 							<artifactSet>
 								<includes>
-									<include>org.dynmap:DynmapCoreAPI:jar:*</include>
+									<include>us.dynmap:DynmapCoreAPI:jar:*</include>
 								</includes>
 							</artifactSet>
 						</configuration>
