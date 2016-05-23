@@ -8,7 +8,6 @@ import org.bukkit.event.HandlerList;
  * 
  * This interface is Bukkit specific.
  */
-@SuppressWarnings("serial")
 public class DynmapWebChatEvent extends Event implements Cancellable {
     public static final String CUSTOM_TYPE = "org.dynmap.DynmapWebChatEvent";
     private static final HandlerList handlers = new HandlerList();
