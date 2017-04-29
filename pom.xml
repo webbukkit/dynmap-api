@@ -73,5 +73,5 @@
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
-	<version>2.5</version>
+	<version>3.0-SNAPSHOT</version>
 </project>
